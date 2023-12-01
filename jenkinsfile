@@ -1,10 +1,10 @@
 
 pipeline{
-   agent any
+   agent {label 'Jenkins-Agent'}
      
      tools{
          jdk 'jdk17'
-         nodejs 'node16'
+         maven 'Maven3'
      }
 
    stages {
