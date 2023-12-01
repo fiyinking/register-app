@@ -8,14 +8,14 @@ pipeline{
      }
 
    stages {
-         stage('Clean Workspace'){
+         stage("Clean Workspace"){
              steps{
                  cleanWs()
              }
          }
-      stage('Checkout from Git'){
+      stage('Checkout from scm'){
              steps{
-                 git branch: 'main', url: 'https://github.com/fiyinking/vprofile-project.git'
+                 git branch: 'main', url: 'https://github.com/fiyinking/register-app.git'
              }
          }
      stage('Build Application'){
