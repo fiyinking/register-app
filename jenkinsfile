@@ -1,0 +1,38 @@
+Jenkins Pipeline Script
+pipeline{
+     agent {label 'Jenkins-Agent'}
+     
+     tools{
+         jdk 'jdk17'
+         nodejs 'node16'
+     }
+
+   stages {
+         stage('Clean Workspace'){
+             steps{
+                 cleanWs()
+             }
+         }
+      stage('Checkout from Git'){
+             steps{
+                 git branch: 'main', url: 'https://github.com/fiyinking/vprofile-project.git'
+             }
+         }
+     stage('Build Application'){
+       steps {
+         sh "mvn clean package"
+       }
+     }
+     
+     stage('Build Application'){
+       steps {
+         sh "mvn test"
+       }
+     }
+   }
+}
+   
+
+
+
+       
