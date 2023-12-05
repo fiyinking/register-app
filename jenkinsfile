@@ -74,6 +74,7 @@ stage("SonarQube Analysis"){
                     sh "curl -v -k --user clouduser:${JENKINS_API_TOKEN} -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${IMAGE_TAG}' 'ec2-54-81-47-193.compute-1.amazonaws.com:8080/job/gitops-register-repo-cd/buildWithParameters?token=gitops-token'"
                 }
             }
+        }
 
    }
 }
